@@ -1,8 +1,8 @@
-name: Snapshot on demand
-
-on: [workflow_dispatch]
-
 jobs:
   call-snapshot:
-    uses: clojure/build.ci/.github/workflows/snapshot.yml@master
     secrets: inherit
+    uses: clojure/build.ci/.github/workflows/snapshot.yml@master
+name: Snapshot on demand
+on:
+  repository_dispatch:
+    types: trigger-ga___snapshot.yml
